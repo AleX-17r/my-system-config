@@ -1,0 +1,37 @@
+#!/bin/sh
+#for using this, create a file with this config for https://github.com/Raymo111/i3lock-color                                                                                    
+
+BLANK='#00000000'                                                                         
+CLEAR='#2A1049'                                                                           
+DEFAULT='#4B0082'                                                                         
+TEXT='#5500FF'                                                                            
+WRONG='#880000bb'                                                                         
+VERIFYING='#00564dE6'                                                                     
+                                                                                          
+i3lock \                                                                                  
+--insidever-color=$CLEAR     \                                                            
+--ringver-color=$VERIFYING   \                                                            
+\                                                                                         
+--insidewrong-color=$CLEAR   \                                                            
+--ringwrong-color=$WRONG     \                                                            
+\                                                                                     
+--inside-color=$BLANK        \                                                         
+--ring-color=$DEFAULT        \                                                         
+--line-color=$BLANK          \                                                                                                                                              
+--separator-color=$DEFAULT   \                                                                                                                                              
+\                                                                                                                                                                           
+--verif-color=$TEXT          \                                                                                                                                              
+--wrong-color=$TEXT          \                                                                                                                                              
+--time-color=$TEXT           \                                                                                                                                              
+--date-color=$TEXT           \                                                                                                                                              
+--layout-color=$TEXT         \                                                                                                                                              
+--keyhl-color=$TEXT         \                                                                                                                                               
+--bshl-color=$WRONG          \                                                                                                                                              
+\
+--screen 1                   \
+--blur 15                     \
+--clock                      \
+--indicator                  \
+--time-str="%H:%M:%S"        \
+--date-str="%A, %Y-%m-%d"       \
+--keylayout 1                \
