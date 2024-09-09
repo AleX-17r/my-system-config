@@ -1,0 +1,24 @@
+[colors.bright]
+black = "0x434758"
+blue = "0xff9cc4"  # Cambiado a un tono más rojo
+cyan = "0xffa3a3"  # Cambiado a un tono más rojo
+green = "0xffddaa"  # Cambiado a un tono más rojo
+magenta = "0xffa3c1"  # Cambiado a un tono más rojo
+red = "0xff4c4c"  # Más intenso
+white = "0xffffff"
+yellow = "0xffe5a5"  # Cambiado a un tono más cálido
+
+[colors.normal]
+black = "0x292d3e"
+blue = "0xff82aa"  # Cambiado a un tono más rojo
+cyan = "0xff89dd"  # Cambiado a un tono más rojo
+green = "0xffc3aa"  # Cambiado a un tono más rojo
+magenta = "0xff7c9e"  # Cambiado a un tono más rojo
+red = "0xff4f4f"  # Más intenso
+white = "0xd0d0d0"
+yellow = "0xffcb6b"
+
+[colors.primary]
+background = "#050000"
+foreground = "0xd0d0d0"
+--------------------------------------------------------
