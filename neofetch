@@ -8,7 +8,7 @@ print_info() {
    #prin "" #use these " _prin""_ " for addings spaces before the info
 
     info "       " title
-    prin "$(color 7)┌────────────────────────────────────────────────────────┐"
+    prin "$(color 7)╭────────────────────────────────────────────────────────╮"
     prin "$(color 2) Operating System"
     info "    >" distro #& info kernel
     info "    >" kernel
@@ -29,7 +29,7 @@ print_info() {
     # extra etcs you can use
     # info "   󰋊 >" disk
     # info "    >" local_ip # or public_ip if you're edgy
-    prin "$(color 7)└────────────────────────────────────────────────────────┘"
+    prin "$(color 7)╰────────────────────────────────────────────────────────╯"
 
 }
 
