@@ -12,6 +12,9 @@ if [ "$1" = "set" ]; then
         cp  "$HOME/themes/$theme/lock" "$HOME/.config/scripts/lock"
 #alacritty terminal
 	cp "$HOME/themes/$theme/alacritty" "$HOME/.config/alacritty.toml"
+#if you don't want more than 1 polybar
+	killall polybar
+	i3-msg restart
 
 elif [ "$1" = "save" ]; then
 
@@ -25,10 +28,6 @@ elif [ "$1" = "save" ]; then
 #alacritty terminal
 	cp "$HOME/.config/alacritty.toml" "$HOME/themes/$theme/alacritty"
 
-killall polybar
-
-i3-msg restart
-
 fi
 
 
@@ -36,4 +35,12 @@ fi
 if [ "$1" = "show" ]; then
 	echo Your saved themes:
 	ls ~/themes #(change this directory if you're using another one)
+
+elif [ "$1" = "help" ]; then
+	echo 'This is a simple script for changing and saving themes in i3wm'
+	echo 'exec this script continued by:'
+	echo '	set   --to set a saved theme'
+	echo '	save  --to save a created theme'
+	echo '	show  --shows you saved themes'
+	echo '	help  --shows this'
 fi
