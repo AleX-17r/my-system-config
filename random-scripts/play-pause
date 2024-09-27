@@ -1,0 +1,17 @@
+#__________.__                     /\ __________                             
+#\______   \  | _____  ___.__.    / / \______   \_____   __ __  ______ ____  
+# |     ___/  | \__  \<   |  |   / /   |     ___/\__  \ |  |  \/  ___// __ \ 
+# |    |   |  |__/ __ \\___  |  / /    |    |     / __ \|  |  /\___ \\  ___/ 
+# |____|   |____(____  / ____| / /     |____|    (____  /____//____  >\___  >
+#                    \/\/      \/                     \/           \/     \/
+#if you have a play/pause key on your keyboard, you might be interested on this simple script (this allows you to use it as play and pause):
+#feel free to visit my Github: https://github.com/AleX-17r/my-system-config/new/main
+
+#!/bin/bash
+status=$(playerctl status)
+
+if [ "$status" == "Playing" ]; then
+    playerctl pause
+else
+    playerctl play
+fi
