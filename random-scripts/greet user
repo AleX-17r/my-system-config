@@ -1,0 +1,13 @@
+#!/bin/bash
+# This simple script will greet you according to the time.
+# I recommend using this on the ~/bashrc, ~/zshrc, or whatever 
+
+hora=$(date +"%H")
+
+if [ "$hora" -ge 04 ] && [ "$hora" -lt 12 ]; then
+    echo "Good morning, $USER"
+elif [ "$hora" -ge 12 ] && [ "$hora" -lt 20 ]; then
+    echo "Good afternoon, $USER"
+else
+    echo "Good night, $USER, sleep well"
+fi
