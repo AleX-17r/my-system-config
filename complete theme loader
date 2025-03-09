@@ -10,46 +10,77 @@
 #--feel free to visit my configs on GitHub: https://github.com/AleX-17r/my-system-config
 
 theme=$2
+imported="imported"
+#Your default themes directory, change this to your own directory.
+dir=~/themes
 
 if [ "$1" = "set" ]; then
 
 #polybar
-        cp "$HOME/themes/$theme/polybar" "$HOME/.config/polybar/config.ini"
+        cp "$dir/$theme/polybar" "$HOME/.config/polybar/config.ini"
 #i3-wm
-        cp "$HOME/themes/$theme/i3" "$HOME/.config/i3/config"
+        cp "$dir/$theme/i3" "$HOME/.config/i3/config"
 #lock screen (https://github.com/Raymo111/i3lock-color)
-        cp  "$HOME/themes/$theme/lock" "$HOME/.config/scripts/lock"
+        cp  "$dir/$theme/lock" "$HOME/.config/scripts/lock"
 #alacritty terminal
-	cp "$HOME/themes/$theme/alacritty" "$HOME/.config/alacritty.toml"
+	cp "$dir/$theme/alacritty" "$HOME/.config/alacritty.toml"
 #if you don't want more than 1 polybar
 	killall polybar
 	i3-msg restart
 
 elif [ "$1" = "save" ]; then
 
-        mkdir "$HOME/themes/$theme"
+        mkdir "$dir/$theme"
 #polybar
-        cp  "$HOME/.config/polybar/config.ini" "$HOME/themes/$theme/polybar"
+        cp  "$HOME/.config/polybar/config.ini" "$dir/$theme/polybar"
 #i3-wm
-        cp  "$HOME/.config/i3/config" "$HOME/themes/$theme/i3"
+        cp  "$HOME/.config/i3/config" "$dir/$theme/i3"
 #lock screen
-        cp  "$HOME/.config/scripts/lock" "$HOME/themes/$theme/lock"
+        cp  "$HOME/.config/scripts/lock" "$dir/$theme/lock"
 #alacritty terminal
-	cp "$HOME/.config/alacritty.toml" "$HOME/themes/$theme/alacritty"
+	cp "$HOME/.config/alacritty.toml" "$dir/$theme/alacritty"
+
+
+elif [ "$1" = "remove" ]; then
+	echo "removing $theme ..."
+	rm -r $dir/$theme
+	
+elif [ "$1" = "import" ]; then
+	#read name
+	#mkdir -p $dir/$name
+	tar -xzvf $theme -C $dir/
+	
+
+elif [ "$1" = "export" ]; then
+	echo 'name for this theme?'
+	read name
+	cd $dir
+	tar -czvf "$name".tar.gz $theme
+
+
+elif [ "$1" = "rename" ]; then
+	echo "Type the new name for $theme"
+	read newname
+	mv /$dir/$theme /$dir/$newname
 
 fi
 
 
-#for showing your themes in ~/themes
+
+#for showing your themes in ~/themes (or $dir variable)
 if [ "$1" = "show" ]; then
 	echo Your saved themes:
-	ls ~/themes #(change this directory if you're using another one)
+	ls $dir #(change this directory if you're using another one)
 
 elif [ "$1" = "help" ]; then
 	echo 'This is a simple script for changing and saving themes in i3wm'
 	echo 'exec this script continued by:'
-	echo '	set   --to set a saved theme'
-	echo '	save  --to save a created theme'
-	echo '	show  --shows you saved themes'
-	echo '	help  --shows this'
+	echo '	set    --to set a saved theme'
+	echo '	save   --to save a created theme'
+	echo '	show   --shows you saved themes'
+	echo '	import --allows you to import a created theme'
+	echo '	export --allows you to export your saved theme'
+	echo '	remove --remove your theme (just rm -r $theme)'
+	echo '	rename --rename a saved theme (mv $theme newname)'
+	echo '	help   --shows this'
 fi
