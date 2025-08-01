@@ -13,7 +13,7 @@ theme=$2
 imported="imported"
 #Your default themes directory, change this to your own directory.
 dir=~/themes
-
+#Make sure the config files are in the correct location.
 if [ "$1" = "set" ]; then
 
 #polybar
@@ -24,6 +24,8 @@ if [ "$1" = "set" ]; then
         cp  "$dir/$theme/lock" "$HOME/.config/scripts/lock"
 #alacritty terminal
 	cp "$dir/$theme/alacritty" "$HOME/.config/alacritty.toml"
+#picom
+	cp "$dir/$theme/picom" "$HOME/.config/picom.conf"
 #if you don't want more than 1 polybar
 	killall polybar
 	i3-msg restart
@@ -39,7 +41,8 @@ elif [ "$1" = "save" ]; then
         cp  "$HOME/.config/scripts/lock" "$dir/$theme/lock"
 #alacritty terminal
 	cp "$HOME/.config/alacritty.toml" "$dir/$theme/alacritty"
-
+#picom
+	cp "$HOME/.config/picom.conf" "$dir/$theme/picom"
 
 elif [ "$1" = "remove" ]; then
 	echo "removing $theme ..."
