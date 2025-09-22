@@ -1,5 +1,3 @@
-live_config_reload = true
-working_directory = "None"
 
 [bell]
 animation = "EaseOutCirc"
@@ -10,27 +8,27 @@ duration = 0
 draw_bold_text_with_bright_colors = false
 
 [colors.bright]
-black = "0x434758"
-blue = "0x9cc4ff"
-cyan = "0xa3f7ff"
-green = "0xddffa7"
-magenta = "0xe1acff"
-red = "0xff8b92"
-white = "0xffffff"
-yellow = "0xffe585"
+black = "0x434758"          # Negro
+blue = "0x9c6aff"           # Azul morado claro
+cyan = "0xa3b3ff"           # Cian morado
+green = "0xddb3ff"          # Verde morado
+magenta = "0xe1acff"        # Magenta
+red = "0xff8b92"            # Rojo
+white = "0xffffff"          # Blanco
+yellow = "0xffe585"         # Amarillo
 
 [colors.normal]
-black = "0x292d3e"
-blue = "0x82aaff"
-cyan = "0xf63a39"
-green = "0xee8977"
-magenta = "0xc792ea"
-red = "0xf07178"
-white = "0xd0d0d0"
-yellow = "0xffcb6b"
+black = "0x292d3e"          # Negro
+blue = "0x7a4b8c"           # Azul morado oscuro
+cyan = "0x8a6bbf"           # Cian morado oscuro
+green = "0xc3a1d6"          # Verde morado claro
+magenta = "0x9b59b6"        # Magenta morado
+red = "0xf07178"            # Rojo
+white = "0xd0d0d0"          # Gris claro
+yellow = "0xffcb6b"         # Amarillo
 
 [colors.primary]
-background = "#050000"
+background = "#17181c"
 foreground = "0xd0d0d0"
 
 [cursor]
@@ -46,19 +44,19 @@ shape = "Block"
 size = 12
 
 [font.bold]
-family = "ComicShannsMono Nerd Font Mono"
+family = "ComicShannsMono Nerd Font "
 style = "Bold"
 
 [font.bold_italic]
-family = "ComicShannsMono Nerd Font Mono"
+family = "ComicShannsMono Nerd Font "
 style = "Bold Italic"
 
 [font.italic]
-family = "ComicShannsMono Nerd Font Mono"
+family = "ComicShannsMono Nerd Font "
 style = "Italic"
 
 [font.normal]
-family = "ComicShannsMono Nerd Font Mono"
+family = "Source Code Pro"
 style = "Regular"
 
 [font.offset]
@@ -91,7 +89,8 @@ decorations = "full"
 decorations_theme_variant = "Dark"
 dynamic_padding = true
 dynamic_title = true
-opacity = 0.9
+opacity = 0.6 
+ 
 startup_mode = "Windowed"
 title = "Alacritty"
 
@@ -102,3 +101,7 @@ instance = "Alacritty"
 [window.padding]
 x = 5
 y = 5
+
+[general]
+live_config_reload = true
+working_directory = "None"
