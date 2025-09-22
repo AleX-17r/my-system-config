@@ -12,3 +12,5 @@ these are my i3wm, polybar, and another configs
 **Picom**: Compositor (Transparency, Blur in some cases)
 
 **Feh**: For Wallpapers
+
+**Terminal Applications:** neofetch, btop, cava, tty-clock, cbonsai
