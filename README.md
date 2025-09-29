@@ -13,4 +13,6 @@ these are my i3wm, polybar, and another configs
 
 **Feh**: For Wallpapers
 
+**Dmenu**: Application Launcher
+
 **Terminal Applications:** neofetch, btop, cava, tty-clock, cbonsai
